@@ -82,7 +82,7 @@
         <p class="location">1351  Sunny Day Drive, Los Angeles, California </p>
         <p class="location">90017, United States</p>
         <p class="phone">(714)-810-4275</p>
-        
+
         <!-- TABLE FOR HOURS OPEN -->
         <h4>Hours</h4>
         <div class="table-con">
@@ -140,7 +140,6 @@ export default {
       return {
         slide: 0,
         sliding: null,
-        link:""
       }
     },
     methods: {
@@ -150,10 +149,10 @@ export default {
       onSlideEnd(slide) {
         this.sliding = false
       },
-      linkmenu: function(link){
+      linkmenu: function(){
         location.href="foodmenu"
       },
-      linkcontact: function(link){
+      linkcontact: function(){
         location.href="contact"
       }
 
