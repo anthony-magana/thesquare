@@ -5,7 +5,7 @@
     <router-view />
         <h1>Welcome to The Square</h1>
         <div class="button">
-            <b-button @click="linkcontact()" variant="outline-danger">Call Now</b-button>
+            <b-button variant="outline-danger"><router-link to="/contact"><p class="contact-btn">Call Now</p></router-link></b-button>
         </div>
         <hr>
         <!-- CAROUSEL PHOTOGALLERY -->
@@ -25,55 +25,54 @@
                 @sliding-end="onSlideEnd"
             >
                 <!-- Text slides with image -->
-                <b-carousel-slide
-                    caption="First slide"
-                    text="Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                <b-carousel-slide>
                     <img slot="img" src="@/assets/slide-images/cooking.jpg"
                     class="d-block img-fluid w-100"
                     width="1024"
                     height="480">
+                    <p class="text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </b-carousel-slide>
 
                 <!-- Slides with custom text -->
-                <b-carousel-slide caption="Second slide"
-                    text="Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                <b-carousel-slide>
                     <img slot="img" src="@/assets/slide-images/pizza-pepperoni.jpg"
                     class="d-block img-fluid w-100"
                     width="1024"
                     height="480">
+                    <p class="text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </b-carousel-slide>
                 
-                <b-carousel-slide caption="Third slide"
-                    text="Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                <b-carousel-slide>
                     <img slot="img" src="@/assets/slide-images/tacos-steak.jpg"
                     class="d-block img-fluid w-100"
                     width="1024"
                     height="480">
+                    <p class="text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </b-carousel-slide>
 
-                <b-carousel-slide caption="Third slide"
-                    text="Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                <b-carousel-slide>
                     <img slot="img" src="@/assets/slide-images/icecream-rolls.jpg"
                     class="d-block img-fluid w-100"
                     width="1024"
                     height="480">
+                    <p class="text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </b-carousel-slide>
 
-                <b-carousel-slide caption="Fourth slide"
-                    text="Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                <b-carousel-slide>
                     <img slot="img" src="@/assets/slide-images/dessert.jpg"
                     class="d-block img-fluid w-100"
                     width="1024"
                     height="480">
+                    <p class="text">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </b-carousel-slide>
 
                 <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-                <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-                    <p class="blank-img">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-                    a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+                <b-carousel-slide img-blank img-alt="Blank image">
+                    <p class="text">
+                    Lorem ipsum convallis vel est. Ut pellentesque ut lacus vel interdum.
                     </p>
-                    <button @click="linkmenu()" class="btn-caro">Learn More</button>
+                    <b-button variant="outline-danger"><router-link to="/foodmenu"><p class="contact-btn">Learn More</p></router-link></b-button>
+
                 </b-carousel-slide>
             </b-carousel>
         </div>
@@ -149,12 +148,12 @@ export default {
       onSlideEnd(slide) {
         this.sliding = false
       },
-      linkmenu: function(){
-        location.href="foodmenu"
-      },
-      linkcontact: function(){
-        location.href="contact"
-      }
+    //   linkmenu: function(){
+    //     location.href="foodmenu"
+    //   },
+    //   linkcontact: function(){
+    //     location.href="contact"
+    //   }
 
     }
 }
@@ -194,6 +193,11 @@ h1{
     font-family: 'Open Sans', sans-serif;
     font-size: 22px;
 }
+.text{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    padding: 25px;
+}
 
 h2{
     /* position: block; */
@@ -209,10 +213,7 @@ h2{
     text-align: center;
     padding-bottom: 15px;
 }
-.btn{
-    padding: 0.375rem 2rem;
 
-}
 .carousel-con{
     padding: 3% 10%;
 }
@@ -237,13 +238,36 @@ td{
     color: rgb(255, 255, 255);
     border: 1px solid transparent;
     border-color: rgb(0, 0, 0);
-    border-radius: 5px;
-    padding: 5px 15px;
 }
 
 .btn-caro:hover{
-    opacity: .7;
+    opacity: .2;
 }
+a{
+    text-decoration: none;
+    color: #dc3545;
+}
+a:hover{
+    color: white;
+}
+.contact-btn{
+    padding: 8px 30px;
+    margin: 0;
+}
+.btn-outline-danger {
+    padding: 0;
+}
+.btn{
+    padding: 0;
+}
+p{
+    margin: 0;
+}
+h3{
+    margin: 0;
+
+}
+
 @media (max-width: 850px){
     h1{
         font-size: 34px;
@@ -251,11 +275,35 @@ td{
     h2{
         font-size: 26px;
     }
+    h3{
+        font-size: 22px;
+    }
     .blank-img{
         font-size: 14px;
     }
     .table-con{
         font-size: 18px;
+    }
+    .text{
+        font-size: 14px;
+        padding: 10px;
+    }
+    .contact-btn{
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+}
+@media (max-width: 500px){
+    .contact-btn{
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    h3{
+        font-size: 18px;
+    }
+    .text{
+        font-size: 12;
+        padding: 5px;
     }
 }
 
