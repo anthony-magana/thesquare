@@ -280,4 +280,14 @@ export default {
       padding-bottom: 15px;
     }
   }
+@media (max-width: 380px){
+  .table-con{
+  padding: 0;
+  font-size: 14px; 
+  }
+  .location{
+    font-size: 14.5px;
+    padding: 0 5px;
+  }
+}
 </style>

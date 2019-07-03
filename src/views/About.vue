@@ -39,7 +39,7 @@
              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
           <div class="where">
-            <button class="visit" @click="linkcontact()">Visit</button>
+            <button class="visit"><router-link to="/contact"><p class="visit-txt">Visit</p></router-link></button>
           </div>
         </b-col>
 
@@ -64,25 +64,7 @@ export default {
     navbar,
     footerComp
   },
-  data: function(){
-    return{
-      link:""
-    }
-  },
-  methods: {
-    linkcontact: function(link){
-      location.href="contact"
-    },
-    // mobile: function(){
-    //   const mq = window.matchMedia( "(min-width: 500px)" );
-    //   if (mq.matches) {
-    //   // window width is at least 500px
 
-    //   } else {
-    //   // window width is less than 500px
-    //   }
-    // },
-  }
 }
 </script>
 
@@ -132,14 +114,25 @@ img {
   color: #dc3545;
   border: 1px solid #dc3545;
   border-radius: 12px;
-  padding: 5px 30px 5px 30px;
   text-align: center;
 }
 .visit:hover{
-  color: white;
   background-color: #dc3545;
 }
-
+.visit-txt{
+  margin: 0;
+  padding: 8px 30px;
+  color: #dc3545;
+}
+button{
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+.visit-txt:hover{
+  color: white;
+}
 @media (max-width: 993px){
   img{
     max-width: 35vw;
